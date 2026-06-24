@@ -1,62 +1,71 @@
-# 📊 Sales Report Generator
+# 📊 Gerador de Relatório de Vendas
 
-A Python pipeline that reads sales data from a CSV file, validates it,
-computes statistics, and generates a formatted text report.
+Pipeline em Python que lê dados de vendas de um arquivo CSV, valida as informações,
+calcula estatísticas e gera um relatório formatado em texto.
 
-Built as part of the **Alura Data Science track — Module 5: Data Structures**.
+Desenvolvido seguindo a **Trilha de Machine Learning da Alura — Módulo 5: Estruturas de Dados**.
 
 ---
 
-## Project structure
+## Tecnologias utilizadas
+
+- **Python 3.11**
+- Módulo nativo `csv` para leitura de arquivos
+- Módulo nativo `datetime` para registro de data/hora no relatório
+- Sem dependências externas — funciona com a instalação padrão do Python
+
+---
+
+## Estrutura do projeto
 
 ```
 sales-report/
 ├── data/
-│   └── vendas.csv          # Input data
+│   └── vendas.csv               # Dados de entrada
 ├── output/
-│   └── relatorio_vendas.txt  # Generated report (created on run)
-├── main.py                 # Main script
+│   └── relatorio_vendas.txt     # Relatório gerado (criado ao executar)
+├── main.py                      # Script principal
 └── README.md
 ```
 
 ---
 
-## How to run
+## Como executar
 
 ```bash
 python main.py
 ```
 
-The report will be saved to `output/relatorio_vendas.txt`.
+O relatório será salvo em `output/relatorio_vendas.txt`.
 
 ---
 
-## What it does
+## O que o projeto faz
 
-| Step | Description |
-|------|-------------|
-| Load | Reads `vendas.csv` with `csv.DictReader` and converts types |
-| Validate | Checks for empty fields, negative quantities/prices |
-| Calculate | Adds `ValorTotal` per row; computes totals and averages |
-| Group | Aggregates quantity and revenue by product |
-| Highlights | Finds best-seller by volume and by revenue |
-| Report | Builds a formatted report and saves to `.txt` |
-
----
-
-## Concepts applied
-
-- `csv.DictReader` for structured file reading
-- Lists and dictionaries for data storage
-- List comprehensions for concise data transformation
-- Manual loops for aggregation (no `lambda`)
-- f-strings with number formatting (`{value:,.2f}`)
-- File I/O with `open()` and `with` blocks
-- Modular code split into focused functions
+| Etapa      | Descrição                                                      |
+|------------|----------------------------------------------------------------|
+| Carregar   | Lê `vendas.csv` com `csv.DictReader` e converte os tipos      |
+| Validar    | Verifica campos vazios, quantidades e preços inválidos         |
+| Calcular   | Adiciona `ValorTotal` por linha; computa totais e médias       |
+| Agrupar    | Agrega quantidade e faturamento por produto                    |
+| Destaques  | Encontra o mais vendido em volume e em receita                 |
+| Relatório  | Monta o relatório formatado e salva em `.txt`                  |
 
 ---
 
-## Sample output
+## Conceitos aplicados
+
+- `csv.DictReader` para leitura estruturada de arquivos
+- Listas e dicionários para armazenamento e organização dos dados
+- Compreensões de listas para transformação concisa de dados
+- Loops manuais para agregação (sem uso de `lambda`)
+- f-strings com formatação numérica (`{valor:,.2f}`)
+- Leitura e escrita de arquivos com `open()` e bloco `with`
+- Código modular dividido em funções com responsabilidade única
+
+---
+
+## Exemplo de saída
 
 ```
 ====================================================
